@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% block title %}{% endblock %}</title>
+
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-D9XILkoivXN+bcvB2kSOowkIvIcBbNdoDQvfBNsxYAIieZbx8/SI4NeUvrRGCpDi"
+    crossorigin="anonymous">
+  
+  <!--Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
+  <!--Custom styles-->
+  <link rel="stylesheet" href="{% static "snippets/style.css" %}">
+
+  <!--jQuery CDN-->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified JavaScript for bootstrap-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <!--Typed.js-->
+  <script src="{% static "snippets/typed.js-master/js/typed.js" %}"></script>
+
+</head>
+
+<body>
+  <!--Navbar-->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="/">iSnippets</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav">
+          <li><a href="/add">New Snippet</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      {% block content %} {% endblock %}
+    </div>
+  </main>
+  
+
+  <!--Footer-->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h4>About iSnippets</h4>
+          <p>iSnippets, built with Django and Python, allows a user to create and view useful code snippets. Think of it as an app to keep track of idiomatic code samples in different languages.</p>
+          <p>Learn more at the Github repo <a href="https://github.com/aishaprograms/iSnippets" target="_blank">iSnippets</a></p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <h4>Contact Me</h4>
+          <ul style="list-style: none">
+            <li><a href="https://github.com/aishaprograms" target="blank">Github</a></li>
+            <li><a href="https://twitter.com/aishaprograms" target="_blank">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/aisha-ahmad/" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Script for typed.js and modifying form -->
+  <script>
+    $(document).ready(function(){
+      $("#typed").typed({
+        stringsElement: $('#typed-strings'),
+        // typing speed
+        typeSpeed: 100,
+        // time before typing starts
+        startDelay: 1000,
+        // backspacing speed
+        backSpeed: 50,
+      });
+      $('input').addClass('form-control');
+      $('textarea').addClass('form-control');
+    });
+  </script>
+</body>
+
+</html>

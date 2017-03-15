@@ -1,0 +1,50 @@
+{% extends 'snippets/base.html' %}
+
+{% block title %} iSnippets {% endblock %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h1 class="text-center">Welcome to iSnippets</h1>      
+    </div>
+  </div>
+
+  <div class="row" id="typed-strings" >
+    <p>echo "Hello World"</p>
+    <p>console.log 'Hello, world!'</p>
+    <p>document.write('Hello, world!');</p>
+    <p>print "Hello, world!"</p>
+    <p>puts "Hello, world!"</p>
+    <p>Hello World!</p>
+  </div>
+
+  <div class="row" id="instructions">
+    <div class="col-sm-12">
+      <p>Has this ever happened to you? You're about to code an awesome program and you get stuck wondering what to type.</p>
+      <p>Hmm is it... <p>
+      <p style="margin-left: 50px; color:limegreen"> <strong id="typed"></strong> </p>
+      <p>This is where iSnippets comes in. No more <em>guessing</em>, no more <em>fumbling</em> around for your notes, no more <em>agonizing</em> over that missing semicolon.</p>
+      <p>It's simple. Add your code snippets and check back here to view them later.</p>
+    </div>
+  </div>
+  
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h4>View Snippets</h4>
+      <p>Here are some snippets that have already been made. Feel free to add your own by clicking on 'New Snippet' in the navigation above. If any of these snippets sound interesting to you, click on its title to view more.</p>
+      {% if snippet_list %}
+        <ul class="list-group">
+        {% for snippet in snippet_list %} 
+          <a href='/detail/{{snippet.id}}'><li class="list-group-item">{{ snippet.title|capfirst }} built with {{snippet.language|capfirst}}</li></a>
+        {% endfor %}
+      </ul>
+      {% else %}
+        <p>No snippets yet.</p>
+      {% endif%}
+    </div>
+  </div>
+  
+
+{% endblock %}

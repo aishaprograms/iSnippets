@@ -1,0 +1,36 @@
+{% extends 'snippets/base.html' %}
+
+{% block title %} Detail {% endblock %}
+
+{% block content %}
+
+<h1>iSnippets Detail View</h1>
+
+<hr>
+
+<h5>Snippet Information</h5>
+
+<table class="table table-striped table-bordered">
+  <tr>
+    <td>Title</td>
+    <td>{{ snippet.title }}</td>
+  </tr>
+
+  <tr>
+    <td>Language</td>
+    <td>{{ snippet.language}}</td>
+  </tr>
+
+  <tr>
+    <td>Snippet</td>
+    <td><pre>{{ snippet.snippet }}</pre></td>
+  </tr>
+
+  <tr>
+    <td>Description</td>
+    <td>{{ snippet.description}}</td>
+  </tr>
+
+</table>
+
+{% endblock %}
