@@ -96,3 +96,8 @@ isnippets_env
 db.sqlite3
 __pycache__
 local_settings.py
+
+venv
+*.pyc
+staticfiles
+.env
