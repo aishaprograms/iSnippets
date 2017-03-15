@@ -81,6 +81,7 @@ celerybeat-schedule
 # virtualenv
 venv/
 ENV/
+isnippets_env
 
 # Spyder project settings
 .spyderproject
@@ -90,3 +91,8 @@ ENV/
 
 
 .DS_store
+
+*.pyc
+db.sqlite3
+__pycache__
+local_settings.py
